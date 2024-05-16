@@ -1,14 +1,13 @@
-import Button from "./components/Button";
-import Alert from "./components/Alert";
-import {useState} from "react";
-import ListGroup from "./components/ListGroup";
-import './App.css';
-import { DiApple } from "react-icons/di";
+import Button from "./components/Button/Button";
+import Like from "./components/Like/Like";
+import {Simulate} from "react-dom/test-utils";
+import toggle = Simulate.toggle;
+
 function App() {
     const items = ["New York", "London", "Paris", "Berlin", "Tokyo"];
     return (
         <div>
-           <DiApple color="red" size="40" />
+            <Like onClick={()=> console.log('Clicked') }/>
         </div>
     );
 }
