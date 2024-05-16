@@ -1,19 +1,33 @@
-import Button from "./components/Button/Button";
-import Like from "./components/Like/Like";
-
 import {useState} from "react";
-import {Simulate} from "react-dom/test-utils";
-import contextMenu = Simulate.contextMenu;
-import Message from "./Message";
 
 function App() {
+    const [customer, setCustomer] = useState({
+        name: "John",
+        address: {
+            street: "123 Main St",
+            city: "New York",
+            state: "NY",
+            zip: "10001"
+        }
+    });
+
+    const handleClick = () => {
+        setCustomer({
+            ...customer,
+            address: {
+                ...customer.address, zip: "10002"
+            }
+        });
+
+    };
+
 
     return (
         <div>
-            <Message/>
+            {customer.address.zip}
+            <button onClick={handleClick}>Click Drink</button>
 
-        </div>
-    );
+        </div>);
 }
 
 export default App;
