@@ -1,9 +1,14 @@
 // import {Fragment} from "react";
 // import {MouseEvent} from "react";
+// {item: [] , heading :string }
+interface ListGroupProps {
+    items: string[];
+    heading: string;
+}
 import {useState} from "react";
-function ListGroup() {
-    let items = ["New York", "San Fransisco", "Los Angeles", "Chicago", "Houston", "Paris", "London", "Berlin", "Tokyo", "Beijing"];
+function ListGroup({items, heading}: ListGroupProps) {
     // items = [];
+
     //Event handler
     // const handleClick = (event: MouseEvent) => console.log(event);
 
@@ -17,12 +22,12 @@ function ListGroup() {
 
 
     return (<>
-        <h1>List Group</h1>
+        <h1>{heading}</h1>
         {/*{getMessages()}*/}
         {items.length === 0 && <p>No items to display</p>}
         <ul className="list-group">
 
-            {items.map((item, index) =>
+            {items .map((item, index) =>
                 <li className={selectedIndex === index ? "list-group-item active" : "list-group-item"}
                     key={item}
                     onClick={() => {
