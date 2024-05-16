@@ -10,14 +10,15 @@ function ListGroup() {
     // const getMessages = () => {
     //     return items.length === 0 ? <p>No items to display</p> : null;
     // }
-
+let selectedIndex = 0
     return (<>
         <h1>List Group</h1>
         {/*{getMessages()}*/}
         {items.length === 0 && <p>No items to display</p>}
         <ul className="list-group">
 
-            {items.map((item, index) => <li className="list-group-item"
+            {items.map((item, index) =>
+                <li className={selectedIndex === index ? "list-group-item active" : "list-group-item"}
                                             key={item}
                                             onClick={handleClick}
             >
