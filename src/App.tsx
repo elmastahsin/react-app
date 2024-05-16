@@ -2,19 +2,27 @@ import Button from "./components/Button/Button";
 import Like from "./components/Like/Like";
 
 import {useState} from "react";
+import {Simulate} from "react-dom/test-utils";
+import contextMenu = Simulate.contextMenu;
 
 function App() {
-    let count = 0;
-    const [isVisible, setIsVisible] = useState(false);
-    const [isApproved, setApproved] = useState(false);
-    const handleClick = () => {
-        setIsVisible(true);
-        count++;
-        console.log(isVisible)
-    }
+    const [person, setPerson] = useState({
+        fistName: 'John',
+        lastName: 'Doe',
+        age: 25,
+        contact: {
+            email: 'john.doe@gmail.com',
+            phone: '9876543210',
+            address: {
+                city: 'Pune',
+                state: 'MH'
+
+            }
+        }
+    });
     return (
         <div>
-            <button onClick={handleClick}>Show</button>
+
         </div>
     );
 }
