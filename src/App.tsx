@@ -11,10 +11,7 @@ function App() {
     return (
         <div>
             <Message/>
-            <Message/>
-            <Message/>
-            <Message/>
-            <Message/>
+
         </div>
     );
 }
