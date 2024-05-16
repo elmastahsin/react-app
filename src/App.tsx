@@ -1,13 +1,20 @@
 import Button from "./components/Button/Button";
 import Like from "./components/Like/Like";
-import {Simulate} from "react-dom/test-utils";
-import toggle = Simulate.toggle;
+
+import {useState} from "react";
 
 function App() {
-    const items = ["New York", "London", "Paris", "Berlin", "Tokyo"];
+    let count = 0;
+    const [isVisible, setIsVisible] = useState(false);
+    const [isApproved, setApproved] = useState(false);
+    const handleClick = () => {
+        setIsVisible(true);
+        count++;
+        console.log(isVisible)
+    }
     return (
         <div>
-            <Like onClick={()=> console.log('Clicked') }/>
+            <button onClick={handleClick}>Show</button>
         </div>
     );
 }
