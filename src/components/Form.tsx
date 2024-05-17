@@ -3,13 +3,19 @@ import React, {FormEvent, useRef} from 'react';
 const Form = () => {
     const nameRef = useRef<HTMLInputElement>(null);
     const ageRef = useRef<HTMLInputElement>(null);
+    const person = {
+        name: '',
+        age: 0
+    };
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
         if (nameRef.current !== null) {
-            console.log(nameRef.current.value);
+            person.name = nameRef.current.value;
+
         }
         if (ageRef.current !== null) {
-            console.log(ageRef.current.value);
+            person.age = parseInt(ageRef.current.value);
+            console.log(person);
         }
     }
     return (
