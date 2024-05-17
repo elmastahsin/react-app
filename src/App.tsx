@@ -33,8 +33,10 @@ function App() {
 
     return (
         <div>
-
-            <button onClick={handleClick}>Click Drink</button>
+            {bugs.map(bug => <p key={bug.id} >{bug.description} {bug.fixed ? 'Fixed' : 'New'} </p>)}
+            {bugs.map(bug => <p key={bug.id} >{bug.description} {bug.fixed ? 'Fixed' : 'New'} </p>)}
+            {bugs.map(bug   => <p key={bug.id} >{bug.description} {bug.fixed ? 'Fixed' : 'New'} </p>)}
+            <button  onClick={handleClick}>Click Me</button>
 
         </div>);
 }
