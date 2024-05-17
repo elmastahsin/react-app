@@ -1,30 +1,23 @@
 import {useState} from "react";
 
 function App() {
-    const [customer, setCustomer] = useState({
-        name: "John",
-        address: {
-            street: "123 Main St",
-            city: "New York",
-            state: "NY",
-            zip: "10001"
-        }
-    });
+    const [tags, setTags] = useState(['happy', 'cheerful']);
 
     const handleClick = () => {
-        setCustomer({
-            ...customer,
-            address: {
-                ...customer.address, zip: "10002"
-            }
-        });
+        //add
+       setTags([...tags,'exciting','fun']);
 
+       //remove
+        setTags(tags.filter(tag => tag !== 'cheerful'));
+
+        //update
+        setTags(tags.map(tag => tag === 'happy' ? 'joyful' : tag));
     };
 
 
     return (
         <div>
-            {customer.address.zip}
+
             <button onClick={handleClick}>Click Drink</button>
 
         </div>);
